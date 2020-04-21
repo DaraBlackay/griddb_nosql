@@ -1,0 +1,340 @@
+
+
+// turn off limits by default (BE CAREFUL)
+require('events').EventEmitter.prototype._maxListeners = 30;
+const Discord = require('discord.js')
+const bot = new Discord.Client() 
+
+bot.login('JdiVZig7Lcd0DfeNBd3MlKqseuTIkIRG');
+
+
+var prefix = "?"
+ 
+
+bot.on('ready', () => {
+  bot.user.setStatus('available')
+  bot.user.setPresence({
+      game: {
+          name: '?help ',
+          type: "Streaming",
+          url: "https://twitch.tv/sangokuboy3813"
+      }
+  });
+});
+
+      bot.login('Njg2NjYyNzIzNDY2OTUyNzIz.Xmaepw.ZvdvO70mkyJikmqkL9NGJbS8XxE')
+
+bot.on('message', function (message) {
+    if (message.content === '?help') {
+        let helpEmbed = new Discord.RichEmbed()
+            .setTitle('**Voici Toutes les commandes du BOT ✵๖̶̶̶ζ͜͡D𝓪rαℑꮻ𝓽✯#5056®** :')
+            .setColor('#89090E')
+            .setDescription('***?helputile, ?helpmodo 🔒, ?helpoli***')
+            .setFooter('Voici le prefix : ?')
+        message.channel.send(helpEmbed)
+        console.log('?help éffectué')
+        console.log('aucun bug trouvé ')
+    }
+
+
+
+bot.on('message', function (message) {
+  if (message.content === '?helputile') {
+      let helputileEmbed = new Discord.RichEmbed()
+      .setTitle('voici les commandes utile')
+      .setColor('#89090E')
+      .setDescription('***?Serveur\n?Bot\n?Invite\n?Avatar\n?Dit\n?copyright\n?clear\n?ping\n?userinfo***')
+      .setFooter('Voici le prefix : ?')
+      message.channel.send(helputileEmbed)
+      console.log('?helpoli éffectué')
+      console.log('aucun bug trouvé ')
+    } 
+
+
+      bot.on('message', function (message) {
+        if (message.content === '?helpoli') {
+            let helpoliEmbed = new Discord.RichEmbed()
+            .setTitle('***Voici les commande poli***')
+            .setColor('#89090E')
+            .setDescription('bonjour\nbonsoir\nbonne nuit')
+            .setFooter('Voici le prefix : ?')
+            message.channel.send(helpoliEmbed)
+            console.log('?helpoli éffectué')
+            console.log('aucun bug trouvé ')
+          } 
+
+      bot.on('message', function (message) {
+         if (message.content === '?helpmodo') {
+             let helpmodoEmbed = new Discord.RichEmbed()
+              .setTitle('Voici les commande de modérateur')
+              .setColor('#89090E')
+              .setDescription('?ban {user} {raison} (require : autorisation de ban )\n?kick {user} {raison} (require : autorisation de kick)\n?mute {user} {raison} (require : autorisation de mute)\n?unmute {user} {raison} (require : autorisation de unmute)')
+              .setFooter('Voici le prefix : ?')
+              message.channel.send(helpmodoEmbed)
+              console.log('?helpmodo éffectué')
+              console.log('aucun bug trouvé ')
+              } 
+
+   if (message.content === '?bot') {
+         let botEmbed = new Discord.RichEmbed()
+             .setTitle('**:bar_chart:information bot:**')
+             .setColor('#18007a')
+             .addField('**:flag_fr:FRENCH BOT :**' , '**QC,CA UTC−05:00**')
+             .addField('**:book:Bot library :**' , '**Discord.js**')
+             .addField('**:robot:Nom du bot :**' , '**✵๖̶̶̶ζ͜͡D𝓪rαℑꮻ𝓽✯#5056®**')
+             .addField('**:paperclip:Date de création :**' , '***2016***')
+             .addField('**:spy:Créateur de ✵๖̶̶̶ζ͜͡D𝓪rαℑꮻ𝓽✯ :**' , '**@DaraBlackay#5691**')
+             .addField('**:spy:co-Créateur de ✵๖̶̶̶ζ͜͡D𝓪rαℑꮻ𝓽✯ :**' , '**@Raph_McCraft #8646**')
+             .addField('**:inbox_tray:Nombre de commandes**' , '**16**')
+             .addField('**:outbox_tray:Nombre de commandes inutilisable**' , '**2**')
+             .addField('**Version de Développement**', '**10.5.2.0**')
+             .addField("**:clipboard:Nombre de serveurs**:", bot.guilds.size)
+             .addField("**:timer:Temps de réaction du bot**", `**0,${bot.ping} ms**`)
+            .addField("**:tv:Nombre de salon**", bot.channels.size)
+       .addField("**:busts_in_silhouette:Nombre d'utilisateur**", bot.users.size)
+             .setFooter('*voici mon préfix : ?')
+
+          message.channel.send(botEmbed)
+          console.log('?bot éffectué')
+          console.log('aucun bug trouvé ')
+}
+ 
+
+
+bot.on("message", function(message) {
+  if (message.content === '?serveur'){
+    let server_name = message.guild.name
+  let server_size = message.guild.members.size
+  let servEmbed = new Discord.RichEmbed()
+  .setDescription('**Voici Les Informations Du Serveur**')
+  .setColor('#0a7a00')
+  .addField('Nom du Serveur' , server_name)
+  .addField("date de création",`${message.guild.createdAt.getDate()}/${message.guild.createdAt.getMonth() + 1}/${message.guild.createdAt.getFullYear()}` )
+  .addField('Propriétaire du Serveur' , message.guild.owner)
+  .addField('membre sur le serveur' , server_size )
+  .addField('région du serveur' , message.guild.region)
+  message.channel.send(servEmbed)
+  console.log('?serveur effectué')
+}})
+
+
+
+if (message.content === '?invite') {
+  let inviteEmbed = new Discord.RichEmbed()
+  .setDescription('**Mes liens d`invitation**')
+  .setColor('#ff6a00')
+  .addField('**avec perm sur-admin**' , '||https://discordapp.com/oauth2/authorize?client_id=686662723466952723&scope=bot&permissions=2146958847|| ')
+  .addField('**avec perm Admin**' , '||https://discordapp.com/oauth2/authorize?client_id=686662723466952723&scope=bot&permissions=1610087935|| ')
+  .addField('**avec perm de Modo**' , '||https://discordapp.com/oauth2/authorize?client_id=686662723466952723&scope=bot&permissions=339995815|| ')
+  .addField('**avec perm sous-modo**' , '||https://discordapp.com/oauth2/authorize?client_id=686662723466952723&scope=bot&permissions=268623015|| ')
+  .setFooter('^^✵๖̶̶̶ζ͜͡D𝓪rαℑꮻ𝓽✯#5056®^^')
+  message.channel.send(inviteEmbed)
+  console.log('?invite éffectué')
+}
+
+if (message.content === '?ping') {
+  let pingEmbed = new Discord.RichEmbed()
+  .setDescription('**Ping du ✵๖̶̶̶ζ͜͡D𝓪rαℑꮻ𝓽✯#5056®**')
+  .setColor('#6402ab')
+  .addField('**pings**' , `**0,${bot.ping} ms enregistrer dans les dernières minutes**`)
+  message.channel.send(pingEmbed)
+  console.log('?ping éffectué')
+}
+
+  bot.on('prête', () => {
+    console.log('je suis prête!');
+  });  
+
+  bot.once('guildMemberAdd', member => {
+    let server_size = message.guild.members.size
+    const channel = member.guild.channels.find(ch => ch.name === '『📝』list');
+
+    if (!channel) return;
+
+    channel.send(`:smile: Bienvenue, ${member} nous sommes toute content de t'avoir dans le serveur, ${server_name} `);
+  });
+
+  
+  if (message.content === 'prefix') {
+    let prefixEmbed = new Discord.RichEmbed()
+
+    var text = message.content.split(' ').slice(1).join(' ');
+
+    if(!text) return message.reply("**Mon Préfix Est: ?**");
+
+    message.channel.send(text);
+
+    message.channel.send(prefixEmbed)
+
+    console.log('prefix éffectué')
+  }
+
+
+  if (message.content === 'bonne nuit') {
+
+    message.channel.send(text);
+
+    if(!text) return message.reply("*** Bonne nuit à toi ***");
+
+    console.log('bonne nuit éffectué')
+    };
+
+
+
+    if (message.content === 'bonsoir') {
+
+      message.channel.send(text);
+
+      if(!text) return message.reply("*** Bonsoir ***");
+
+
+      console.log('bonne nuit éffectué')
+      };
+
+
+      if (message.content === 'bonjour') {
+
+        message.channel.send(text);
+
+        if(!text) return message.reply("*** Bonjour ***")
+
+        console.log('bonne nuit éffectué')
+        };
+
+        bot.on('message', function (message) {
+          if (message.content.includes('fuck')) {
+            return message.reply('pas de mauvais mot please!!111!1')
+          }
+        })
+
+
+    if (message.content === '?copyright') {
+    message.channel.send("***:no_entry::warning:l'équipe du DaraSupport®\n```Tous droits réservés```\ntoute reproduction du bot ✵๖̶̶̶ζ͜͡D𝓪rαℑꮻ𝓽✯#5056® est STRICTEMENT INTERDITE sans l'autorisation écrite\ndu créateur.:no_entry::warning:*** ")
+  }
+        
+;
+
+
+
+
+bot.on('message', function (message) {
+if (message.content === `?userinfo`) {
+  let userEmbed = new Discord.RichEmbed()
+  message.channel.send(`***ton speudo:*** ***${message.author.username}***\n***Ton ID***: ***${message.author.id}***`);
+  let member = message.mentions.members.first();
+  let Auser = message.guild.member(message.author)
+  message.channel.send(userEmbed)
+};
+
+
+
+bot.on("message", async message => {
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+if(cmd === '?ban'){
+       let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+      if(!bUser) return message.channel.send("**vous devez mentioner un utilisateur!**");
+      let bReason = args.join(" ").slice(22);
+      if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send("**vous ne disposé pas des permissions néscessaire pour effectuer cette action!**");
+      if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send("**cet utilisateur ne peut pas etre bannie sur ce serveur!**");
+      
+      let banEmbed = new Discord.RichEmbed()
+      .setDescription("Rapport de ban")
+      .setColor("#bc2222")
+      .addField("user Sanctionée", `${bUser} with ID ${bUser.id}`)
+      .addField("Modérateur", `<@${message.author.id}> with ID ${message.author.id}`)
+      .addField("salon ", message.channel)
+      .addField("quand", message.createdAt)
+      .addField("raison", bReason)
+      .setFooter('✵๖̶̶̶ζ͜͡D𝓪rαℑꮻ𝓽✯#5056®');
+         let rapportchannel = message.guild.channels.find(`name`, "『📝』logs");
+      if(!rapportchannel) return message.channel.send("il n'a pas de salon :『📝』logs");
+       message.guild.member(bUser).ban(bReason);
+      rapportchannel.send(banEmbed);
+
+       return;
+    }
+});
+bot.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+if(cmd === '?kick'){
+     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!kUser) return message.channel.send("**vous devez mentioner un utilisateur!**");
+    let kReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send("**vous ne disposez pas des permissions néscessaire pour effectuer cette action!**");
+    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("**cet utilisateur ne peut pas etre kick sur ce serveur!**");
+
+    let kickEmbed = new Discord.RichEmbed()
+    .setDescription("**Rapport de kick**")
+    .setColor("#bc2222")
+    .addField("user Sanctionée",`${bUser} with ID ${kUser.id} `)
+    .addField("Modérateur", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("salon ", message.channel)
+    .addField("quand", message.createdAt)
+    .addField("raison", kReason)
+    .setFooter('✵๖̶̶̶ζ͜͡D𝓪rαℑꮻ𝓽✯#5056®');
+    let rapportchannel = message.guild.channels.find(`name`, "『📝』logs");
+    if(!rapportchannel) return message.channel.send("**il n'a pas de salon :『📝』logs**");
+      message.guild.member(kUser).kick(kReason); 
+    rapportchannel.send(kickEmbed);
+     return;
+           
+  }
+
+});
+
+
+
+
+bot.on('message', function (message) {
+  if (message.content.startsWith("?avatar"  )) {
+      let avatarembed = new Discord.RichEmbed()
+      let member = message.mentions.members.first();
+      let Auser = message.guild.member(message.author)
+      if (!member) {
+          avatarembed.setImage(Auser.user.avatarURL)
+          return message.channel.send(avatarembed);
+      } else {
+          avatarembed.setImage(member.user.avatarURL)
+          return message.channel.send(avatarembed);
+      }
+  }
+})
+
+ 
+
+
+
+
+      bot.on("message", message => {
+        if(message.content.startsWith("?dit")) {
+
+          message.delete().catch();
+        
+          var text = message.content.split(' ').slice(1).join(' ');
+        
+          if(!text) return message.reply("***Incorrect usage -> Exemple: !dit salut***");
+        
+           message.channel.send(text);
+
+}
+
+
+ 
+
+})})})})})})
+
+
+
+
+
+
+
+
